@@ -1,3 +1,8 @@
+"""This code generates a heatmap to visualize the elemental concentration 
+(in parts per million, ppm) of various elements found in different sources 
+of printed circuit boards (PCBs), including routers, mobile phones, and 
+smartphones."""
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd

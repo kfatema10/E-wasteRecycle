@@ -1,3 +1,9 @@
+"""This Python code analyzes the extraction of copper (Cu) using different iron-based 
+leaching solutions and optimizes the process for e-waste (PCB) feedstock. It also calculates 
+the reaction order using interpolation and curve-fitting techniques. Additionaly, the code 
+find the optimal PCB amount that maximizes copper recovery. The result is visualized with plots 
+showing the interpolated data and the optimal feed amount."""
+
 import csv
 
 data = [

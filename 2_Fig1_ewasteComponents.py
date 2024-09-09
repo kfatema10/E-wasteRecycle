@@ -1,3 +1,6 @@
+"""This code generates a donut chart visualizing the composition of 
+electronic waste (e-waste) in terms of various material categories."""
+
 import matplotlib.pyplot as plt
 import numpy as np
 

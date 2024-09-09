@@ -1,3 +1,9 @@
+"""This code generates three bar plots showing the percentage contribution 
+of the top five elements, along with an "Others" category, for routers, 
+mobile phones, and smartphones. The elements are ranked based on their 
+total concentration in parts per million (ppm), and each plot is annotated 
+with percentage values for better clarity."""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 

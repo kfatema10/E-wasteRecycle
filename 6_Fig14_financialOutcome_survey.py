@@ -1,3 +1,7 @@
+"""This Python code creates a bar chart comparing the yearly extractable copper (in tons) 
+and potential earnings (in million BDT) from two locations of Dhaka city of Bangladesh, 
+Chankharpool and Elephant Road, as well as their combined total."""
+
 import matplotlib.pyplot as plt
 import numpy as np
 

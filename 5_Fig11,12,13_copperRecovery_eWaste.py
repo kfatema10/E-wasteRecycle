@@ -36,38 +36,32 @@ csv_file = "data.csv"  # Load the CSV file
 df = pd.read_csv(csv_file)
 
 print(df.head())  # Display the 1st 5 rows
+
 # ....
-# Part
-# 1: Optimization
-# for the concentration of leaching reagent
-# Step
-# 1 - Extracting
-# data
-# from
-#
-# 'dataframe'
+# Part 1: Optimization for the concentration of leaching reagent
+    # Step 1 - Extracting data from 'dataframe'
+
 # Extracting the first four columns and converting to float with 'integer location'
 x_iron = df.iloc[:, 0].astype(float)  # Day number
 y_25 = df.iloc[:, 1].astype(float)  # Extraction of Cu in wt% with 25:75 Fe(II):Fe(III) solution
 y_50 = df.iloc[:, 2].astype(float)  # Extraction of Cu in wt% with 50:50 Fe(II):Fe(III) solution
 y_75 = df.iloc[:, 3].astype(float)  # Extraction of Cu in wt% with 75:25 Fe(II):Fe(III) solution
 
-# Printing the first few values of each variable
+# Printing the first few values of each variable for visualization, skip if not necessary
+
 # print("x_iron (days):\n", x.head(), '\n')
 # print("y_25 (Cu in wt% (25:75)):\n", y_25.head(), '\n')
 # print("y_50 (Cu in wt% (50:50):\n", y_50.head(), '\n')
 # print("y_75 (Cu in wt% (75:25):\n", y_75.head(), '\n')
+
 # ....
-# Step
-# 2 - Plotting
-# the
-# experimental
-# data
-# using
-# 'matplotlib'
+# Step 2 - Plotting the experimental data using 'matplotlib'
+
 import matplotlib.pyplot as plt
 
-# Extracting the first four columns and converting to float by 'column names'
+# Extracting the first four columns and converting to float by 'column names, 
+    # skip if not necessary
+
 # x_iron = df['Day'].astype(float)
 # y_25 = df['[Cu] (25:75)'].astype(float)
 # y_50 = df['[Cu] (50:50)'].astype(float)
@@ -114,29 +108,19 @@ plt.grid()
 plt.xticks([1, 2, 3, 4, 5])
 
 plt.show()
+
 # ------
-# Step
-# 3 - Finding
-# the
-# best
-# leaching
-# solution
-# Deduction
+# Step 3 - Finding the best leaching solution
+
 print("Finding of Part-1: \n '(50:50) volume% Fe solution' gives maximum Cu extraction,"
       " ", "52.34 wt%, in the 5-day extraction process.")
+
 # ---
-# Part - 2: Calculation
-# of
-# Reaction
-# Order
-# for the reaction with the optimum leaching solution
-# Step
-# 1: Extracting
-# data
-# from
-#
-# 'dataframe' and plotting
+# Part - 2: Calculation of Reaction Order for the reaction with the optimum leaching solution
+
+# Step 1: Extracting data from 'dataframe' and plotting
 # Extracting data for time and concentration of Cu with 50:50 Fe solution
+
 time = df['Day'].astype(float)  # time for reaction
 C_A = df['[Cu] (50:50)'].astype(float)  # conc. of Cu leached by 50:50 Fe soln
 
@@ -157,19 +141,18 @@ plt.xticks(x)
 
 # Show plot
 plt.show()
-# ----
-# Step
-# 2: Interpolation
-# for [Cu] vs time data with
 
-# piecewise cubic Hermite interpolating polynomial (pchip) interpolation function
+# ----
+# Step 2: Interpolation for [Cu] vs time data with 
+    # piecewise cubic Hermite interpolating polynomial (pchip) interpolation function
+
 import numpy as np
 from scipy.interpolate import PchipInterpolator
 
-pchip_func = PchipInterpolator(x, y)  # Define a function
-x_pchip = np.linspace(x.min(), x.max(), 50)  # print('Interpolated x:\n', x_pchip)
+pchip_func = PchipInterpolator(x, y)                 # Define a function
+x_pchip = np.linspace(x.min(), x.max(), 50)          # print('Interpolated x:\n', x_pchip)
 y_pchip = pchip_func(x_pchip)  # Interpolation for [Cu]
-# print('Interpolated y_pchip (50:50):\n', y_pchip)   # printing interpolated [Cu]
+# print('Interpolated y_pchip (50:50):\n', y_pchip)  # printing interpolated [Cu]
 
 # Plotting
 plt.plot(x_pchip, y_pchip, label='Interpolated Curve for [Cu] (50:50)')  # interpolated data
@@ -185,10 +168,10 @@ plt.xticks([1, 2, 3, 4, 5])
 
 # Show plot
 plt.show()
+
 # ----
-# Step
-# 3: Calculation
-# for different reaction order
+# Step 3: Calculation for different reaction order
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
@@ -240,11 +223,10 @@ plt.xticks([1, 2, 3, 4, 5])
 
 # Show the plot
 plt.show()
+
 # ----
-# Step
-# 4: Curve
-# fitting
-# for reaction order
+# Step 4: Curve fitting for reaction order
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
@@ -286,7 +268,7 @@ r_squared2 = r2_score(y2, y2_fitted)
 print("R^2 value0:", r_squared0)
 print("R^2 value1:", r_squared1)
 print("R^2 value2:", r_squared2)
-# ----
+
 # Plotting fitted data in a subplot
 fig, axs = plt.subplots(3, 1, figsize=(7, 10), tight_layout=True)
 
@@ -336,15 +318,11 @@ plt.grid()
 plt.xticks([1, 2, 3, 4, 5])
 
 plt.show()
+
 # ---
-# Part
-# 3: - Maximizing
-# e - waste
-# amount as feed
-# for the leaching process
-# Step
-# 1: Extracting and plotting
-# data
+# Part 3: - Maximizing e-waste amount as feed for the leaching process
+# Step 1: Extracting and plotting data
+
 # Extracting data
 x_pcb = df['PCB (g)'].astype(float)  # Feed amount
 y_pcb = df['[Cu] (50:50, PCB)'].astype(float)  # [Cu] with 50:50 Fe soln
@@ -362,10 +340,10 @@ plt.grid()
 plt.xticks(x_pcb)
 
 plt.show()
+
 # ----
-# Step
-# 2: Interpolation
-# for a smooth curve with 'pchip' function
+# Step 2: Interpolation for a smooth curve with 'pchip' function
+
 import numpy as np
 from scipy.interpolate import PchipInterpolator
 
@@ -390,17 +368,13 @@ plt.grid()
 plt.xticks(x_pcb)
 
 plt.show()
+
 # ---
-# Step
-# 3: Maximization
-# of
-# feed
-# Application
-# of
-# 'minimize'
-# function
+# Step 3: Maximization of feed Application of 'minimize' function
+
 # print('x_pcb_pchip:\n', x_pcb_pchip)
 # print('y_pcb_pchip:\n', y_pcb_pchip)
+
 from scipy.optimize import minimize
 
 x_range = x_pcb_pchip
@@ -422,8 +396,10 @@ y_optimal = np.interp(x_optimal,  # Extract maximum y
 print("Optimal value of PCB for maximum [Cu]: {:.4f}"
       .format(x_optimal), 'gm')
 print('Maximum [Cu]: {:.4f}'.format(y_optimal), '(wt%)')
+
 # ---
 # plotting with data label
+
 plt.figure(figsize=(10, 6), dpi=100)
 
 plt.plot(x_pcb_pchip, y_pcb_pchip, color='royalblue',  # Interpolated curve

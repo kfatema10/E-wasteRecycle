@@ -3,6 +3,11 @@
 of printed circuit boards (PCBs), including routers, mobile phones, and 
 smartphones."""
 
+"""-- Metadata __
+Author: Kaniz Fatema
+Maintainer: Kaniz Fatema
+Contact: fatemache10@gmail.com"""
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd

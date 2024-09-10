@@ -2,6 +2,11 @@
 and potential earnings (in million BDT) from two locations of Dhaka city of Bangladesh, 
 Chankharpool and Elephant Road, as well as their combined total."""
 
+"""-- Metadata __
+Author: Kaniz Fatema
+Maintainer: Kaniz Fatema
+Contact: fatemache10@gmail.com"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 

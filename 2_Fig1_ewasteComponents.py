@@ -1,6 +1,11 @@
 """This code generates a donut chart visualizing the composition of 
 electronic waste (e-waste) in terms of various material categories."""
 
+"""-- Metadata __
+Author: Kaniz Fatema
+Maintainer: Kaniz Fatema
+Contact: fatemache10@gmail.com"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 

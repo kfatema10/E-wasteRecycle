@@ -8,6 +8,7 @@ The project includes:
   Optimization of feed amount in the leaching process
 
 **Table of Contents**
+  
   Project Overview
   Data Description
   Installation

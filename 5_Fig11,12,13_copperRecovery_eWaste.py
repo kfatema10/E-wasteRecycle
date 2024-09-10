@@ -4,6 +4,11 @@ the reaction order using interpolation and curve-fitting techniques. Additionaly
 find the optimal PCB amount that maximizes copper recovery. The result is visualized with plots 
 showing the interpolated data and the optimal feed amount."""
 
+"""-- Metadata __
+Author: Kaniz Fatema
+Maintainer: Kaniz Fatema
+Contact: fatemache10@gmail.com"""
+
 import csv
 
 data = [

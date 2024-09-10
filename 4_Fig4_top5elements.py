@@ -4,6 +4,11 @@ mobile phones, and smartphones. The elements are ranked based on their
 total concentration in parts per million (ppm), and each plot is annotated 
 with percentage values for better clarity."""
 
+"""-- Metadata __
+Author: Kaniz Fatema
+Maintainer: Kaniz Fatema
+Contact: fatemache10@gmail.com"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 

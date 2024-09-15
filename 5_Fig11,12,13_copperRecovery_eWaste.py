@@ -2,7 +2,10 @@
 leaching solutions and optimizes the process for e-waste (PCB) feedstock. It also calculates 
 the reaction order using interpolation and curve-fitting techniques. Additionaly, the code 
 find the optimal PCB amount that maximizes copper recovery. The result is visualized with plots 
-showing the interpolated data and the optimal feed amount."""
+showing the interpolated data and the optimal feed amount.
+
+To use this code, the data is to be provided for Day and amount of copper extracted 
+using different leaching agents."""
 
 """-- Metadata __
 Author: Kaniz Fatema

@@ -4,8 +4,9 @@ the reaction order using interpolation and curve-fitting techniques. Additionaly
 find the optimal PCB amount that maximizes copper recovery. The result is visualized with plots 
 showing the interpolated data and the optimal feed amount.
 
-To use this code, the data is to be provided for day, amount of copper extracted using 
-different leaching agents, and amount of PCB as a feed."""
+To reproduce this model based on the exxperimental part of the study, the data is to be 
+provided for day, amount of copper extracted using different leaching agents, 
+and amount of PCB as a feed."""
 
 """-- Metadata __
 Author: Kaniz Fatema

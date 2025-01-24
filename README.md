@@ -151,4 +151,4 @@ Contributions are welcome! If you would like to contribute to this project, feel
 
 9) Citation:
 
-(https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4912284) 
+[(https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4912284) ](https://www.cell.com/heliyon/fulltext/S2405-8440(24)17484-1?uuid=uuid%3A93bf2673-120f-48f1-8981-2a8f9dd0b7fd)
